@@ -1,0 +1,16 @@
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false"
+>
+  @for (item of items; track $index) {
+  <div class="data-card">
+    {{ item }}
+  </div>
+  } @if (isLoading) {
+  <div>Loading ...</div>
+  }
+</div>
